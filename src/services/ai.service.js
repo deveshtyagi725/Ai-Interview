@@ -68,7 +68,6 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
     return JSON.parse(response.text)
 }
 
-
 async function generatePdfFromHtml(htmlContent) {
     const browser = await puppeteer.launch({
         headless: true,
