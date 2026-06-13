@@ -69,9 +69,15 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
 }
 
 async function generatePdfFromHtml(htmlContent) {
+    console.log("Chrome path:", puppeteer.executablePath())
+
     const browser = await puppeteer.launch({
+        executablePath: puppeteer.executablePath(),
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
     })
 
     const page = await browser.newPage()
@@ -90,7 +96,6 @@ async function generatePdfFromHtml(htmlContent) {
     await browser.close()
     return pdfBuffer
 }
-
 
 async function generateResumePdf({ resume, selfDescription, jobDescription }) {
     const ai = getAiClient()
