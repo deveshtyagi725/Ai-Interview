@@ -2,12 +2,12 @@
   "name": "yt-genai",
   "version": "1.0.0",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "npx nodemon server.js",
-    "postinstall": "npx puppeteer browsers install chrome",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+ "scripts": {
+  "start": "node server.js",
+  "dev": "npx nodemon server.js",
+  "postinstall": "npx puppeteer browsers install chrome --path /opt/render/project/.cache/puppeteer",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
   "dependencies": {
     "@google/genai": "^1.42.0",
     "bcryptjs": "^3.0.3",
